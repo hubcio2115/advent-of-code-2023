@@ -9,10 +9,13 @@ pub fn part_1(lines: Lines) -> usize {
         .map(|line| -> usize {
             let mut number_matches = pattern.find_iter(line);
 
-            let left = number_matches.next().unwrap();
-            let right = number_matches.last().unwrap_or(left);
+            let left = number_matches.next().unwrap().as_str();
+            let right = match number_matches.last() {
+                Some(value) => value.as_str(),
+                None => left,
+            };
 
-            format!("{}{}", left.as_str(), right.as_str())
+            format!("{}{}", left, right)
                 .parse()
                 .unwrap()
         })
