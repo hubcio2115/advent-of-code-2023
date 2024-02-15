@@ -2,6 +2,7 @@ use std::{collections::HashMap, str::Lines, usize};
 
 use regex::Regex;
 
+#[allow(dead_code)]
 pub fn part_1(lines: Lines) -> usize {
     let pattern = Regex::new(r"\d").unwrap();
 
@@ -15,13 +16,12 @@ pub fn part_1(lines: Lines) -> usize {
                 None => left,
             };
 
-            format!("{}{}", left, right)
-                .parse()
-                .unwrap()
+            format!("{}{}", left, right).parse().unwrap()
         })
         .sum()
 }
 
+#[allow(dead_code)]
 pub fn part_2(lines: Lines) -> usize {
     let digits: HashMap<String, usize> = "one,two,three,four,five,six,seven,eight,nine"
         .split(',')
@@ -49,7 +49,7 @@ pub fn part_2(lines: Lines) -> usize {
         })
         .sum();
 
-    return res;
+    res
 }
 
 #[cfg(test)]
