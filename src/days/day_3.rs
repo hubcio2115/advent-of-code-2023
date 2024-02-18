@@ -1,3 +1,5 @@
+// WARNING: This code does not work!
+
 use std::{str::Lines, usize};
 
 const SYMBOLS: [char; 10] = ['#', '@', '*', '=', '+', '%', '$', '-', '/', '&'];
@@ -57,12 +59,8 @@ pub fn part_1(lines: Lines) -> usize {
         }
     }
 
-    // dbg!("{:?}", &coords_of_symbols);
-    // dbg!("{:?}", &part_numbers);
-
     let mut part_number_adjacent_to_symbols: Vec<&PartNumber> = vec![];
     for (x, y) in coords_of_symbols {
-        println!("({}, {})", x, y);
         for part_number in &part_numbers {
             let is_to_left_or_right =
                 (part_number.x2 == x - 1 || part_number.x1 == x + 1) && part_number.y == y;
@@ -87,14 +85,12 @@ pub fn part_1(lines: Lines) -> usize {
         }
     }
 
-    // dbg!("{:?}", &part_number_adjacent_to_symbols);
-
     part_number_adjacent_to_symbols
         .into_iter()
         .fold(0, |acc, part_number| acc + part_number.value)
 }
 
-pub fn part_2(_lines: Lines) -> usize {
+pub fn part_2(lines: Lines) -> usize {
     todo!()
 }
 
