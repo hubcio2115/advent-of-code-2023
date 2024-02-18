@@ -5,7 +5,7 @@
       "request": "launch",
       "name": "run advent-of-code-2023",
       "program": "${workspaceFolder}/target/debug/advent-of-code-2023",
-      "args": ["./inputs/day3.txt"],
+      "args": ["./inputs/day4.txt"],
       "cwd": "${workspaceFolder}",
       "sourceMap": {},
       "sourceLanguages": ["rust"],
