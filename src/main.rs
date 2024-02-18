@@ -12,6 +12,9 @@ fn main() {
         exit(1);
     };
 
-    let result_part1 = days::day_3::part_1(file.lines());
+    let result_part1 = days::day_4::part_1(file.lines());
     println!("{}", result_part1);
+
+    let result_part2 = days::day_4::part_2(file.lines());
+    println!("{}", result_part2);
 }
